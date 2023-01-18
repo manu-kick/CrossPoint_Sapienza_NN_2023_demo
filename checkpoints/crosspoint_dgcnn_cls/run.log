@@ -1,0 +1,70 @@
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=3, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=1)
+Using CPU
+Train 0, loss: 3.206039
+Train 1, loss: 3.072276
+Train 2, loss: 2.945416
+Train 3, loss: 2.849694
+Train 4, loss: 2.808535
+Train 5, loss: 2.748351
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
+Namespace(exp_name='crosspoint_dgcnn_cls', model='dgcnn', batch_size=20, test_batch_size=16, epochs=100, start_epoch=0, use_sgd=False, lr=0.001, momentum=0.9, no_cuda=False, seed=1, eval=False, num_points=2048, dropout=0.5, emb_dims=1024, k=15, resume=False, model_path='', save_freq=50, print_freq=200, enable_wandb=False)
+Using CPU
