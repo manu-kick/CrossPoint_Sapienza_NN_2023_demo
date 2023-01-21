@@ -13,6 +13,7 @@ import torch.nn.functional as F
 
 #from models.dgcnn import DGCNN, ResNet, DGCNN_partseg
 from torchvision.models import resnet50, resnet18
+from torchvision.models import vit_l_16
 
 
 
@@ -149,9 +150,32 @@ class ResNet(pl.LightningModule):
         
     def forward(self, x):
         x = self.resnet(x)
+        #print("SHAPE DI X in RESNET ---->",x.shape) # (batchsize x 2048)
         x = self.inv_head(x)
         
         return x
+
+class VisionTransformer(pl.LightningModule):
+    def __init__(self, model, feat_dim = 1000):
+        super(VisionTransformer, self).__init__()
+        self.vision_transformer = model
+        self.vision_transformer.output_hidden_states = True
+        
+        self.inv_head = nn.Sequential(
+                            nn.Linear(feat_dim, 512, bias = False),
+                            nn.BatchNorm1d(512),
+                            nn.ReLU(inplace=True),
+                            nn.Linear(512, 256, bias = False)
+                            ) 
+        
+    def forward(self, x):
+        x = self.vision_transformer(x) #get output of hidden states
+        #print("SHAPE DI X in ViT ---->",x.shape) # (batchsize, numclasses) -> (2,1000)
+        #x = x[:, 0, :]
+        x = self.inv_head(x)
+        
+        return x
+
 
 
 class CrosspointLightning (pl.LightningModule):
@@ -163,14 +187,21 @@ class CrosspointLightning (pl.LightningModule):
         # ------------
         # models
         # ------------
-        if args.model == 'dgcnn':
+        if args.model_point == 'dgcnn':
             self.point_model = DGCNN(args) 
-        elif args.model == 'dgcnn_seg':
+        elif args.model_point == 'dgcnn_seg':
             self.point_model = DGCNN_partseg(args) #todo in lightning
         else:
             raise Exception("Not implemented")
 
-        self.img_model = ResNet(resnet50(), feat_dim = 2048) 
+        if args.model_img == 'resnet':
+            self.img_model = ResNet(resnet50(), feat_dim = 2048) 
+        elif args.model_img == 'vision_transformer':
+            self.img_model = VisionTransformer(vit_l_16(), feat_dim = 1000) 
+        else:
+            raise Exception("Not implemented")
+
+        
         self.criterion = NTXentLoss(temperature = 0.1)
 
         if args.enable_wandb == True:
@@ -261,7 +292,8 @@ def cli_main():
     # ------------
     parser = argparse.ArgumentParser(description='Point Cloud Recognition')
     parser.add_argument('--exp_name', type=str, default='exp', metavar='N',help='Name of the experiment')
-    parser.add_argument('--model', type=str, default='dgcnn', metavar='N',choices=['dgcnn', 'dgcnn_seg'],help='Model to use, [pointnet, dgcnn]')
+    parser.add_argument('--model_point', type=str, default='dgcnn', metavar='N',choices=['dgcnn', 'dgcnn_seg'],help='Model to use, [pointnet, dgcnn]')
+    parser.add_argument('--model_img', type=str, default='resnet', metavar='N',choices=['resnet', 'vision_transformer'],help='Model to use for images feature extraction, [ResNet, Vision Transformer]')
     parser.add_argument('--batch_size', type=int, default=16, metavar='batch_size',help='Size of batch)')
     parser.add_argument('--test_batch_size', type=int, default=16, metavar='batch_size',help='Size of batch)')
     parser.add_argument('--epochs', type=int, default=250, metavar='N',help='number of episode to train ')

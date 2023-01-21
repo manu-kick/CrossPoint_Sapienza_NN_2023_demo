@@ -1,5 +1,8 @@
-# Traning CrossPoint for classification
-python train_crosspoint.py --model dgcnn --epochs 100 --lr 0.001 --exp_name crosspoint_dgcnn_cls --batch_size 20 --print_freq 200 --k 15
+# Traning CrossPoint for classification with dcgnn and resnet
+python train_with_lightning.py --model_point dgcnn --model_img resnet --epochs 100 --lr 0.001 --exp_name crosspoint_dgcnn_cls --batch_size 20 --print_freq 200 --k 15 
+
+# Traning CrossPoint for classification with dcgnn and Vision transformer
+python train_with_lightning.py --model_point dgcnn --model_img vision_transformer --epochs 100 --lr 0.001 --exp_name crosspoint_dgcnn_cls --batch_size 20 --print_freq 200 --k 15
 
 
 # Training CrossPoint for part-segmentation
