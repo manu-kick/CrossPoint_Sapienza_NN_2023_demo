@@ -14,6 +14,8 @@ import torch.nn.functional as F
 #from models.dgcnn import DGCNN, ResNet, DGCNN_partseg
 from torchvision.models import resnet50, resnet18
 from torchvision.models import vit_l_16
+#from models/pointbert/Point-BERT/models import Point_Bert
+import sys
 
 
 
@@ -176,7 +178,26 @@ class VisionTransformer(pl.LightningModule):
         
         return x
 
-
+class Point_Bert(pl.LightningModule):
+    def __init__(self, model, feat_dim = 1000):
+        super(Point_Bert, self).__init__()
+        self.point_bert = model
+        #self.vision_transformer.output_hidden_states = True
+        
+        self.inv_head = nn.Sequential(
+                            nn.Linear(feat_dim, 512, bias = False),
+                            nn.BatchNorm1d(512),
+                            nn.ReLU(inplace=True),
+                            nn.Linear(512, 256, bias = False)
+                            ) 
+        
+    def forward(self, x):
+        x = self.point_bert(x) #get output of hidden states
+        print("SHAPE DI X in Point bert ---->",x.shape) # (batchsize, numclasses) -> (2,1000)
+        #x = x[:, 0, :]
+        x = self.inv_head(x)
+        
+        return x
 
 class CrosspointLightning (pl.LightningModule):
     def __init__(self, args):
@@ -191,6 +212,11 @@ class CrosspointLightning (pl.LightningModule):
             self.point_model = DGCNN(args) 
         elif args.model_point == 'dgcnn_seg':
             self.point_model = DGCNN_partseg(args) #todo in lightning
+        elif args.model_point == 'pointbert':
+            #self.point_model = torch.load_state_dict(torch.load('./models/Point-BERT.pth',map_location=torch.device('cpu')))
+            self.point_model = Point_BERT()
+            state_dict = torch.load('models/Point-BERT.pth',map_location=torch.device('cpu'))
+            self.point_model.load_state_dict(state_dict)
         else:
             raise Exception("Not implemented")
 
@@ -217,7 +243,14 @@ class CrosspointLightning (pl.LightningModule):
 
         data = torch.cat((data_t1, data_t2))
         data = data.transpose(2, 1).contiguous()
-        _, point_feats, _ = self.point_model(data)
+
+        if self.args.model_point == 'dgcnn' or self.args.model_point == 'dgcnn_seg':
+            _, point_feats, _ = self.point_model(data)
+        elif self.args.model_point == 'pointbert':
+            point_feats = self.point_model(data)
+        else:
+            raise Exception("Not implemented")
+        
         img_feats = self.img_model(imgs)
 
         point_t1_feats = point_feats[:batch_size, :]
@@ -255,7 +288,6 @@ class CrosspointLightning (pl.LightningModule):
 
         return [optimizer], [lr_scheduler]
 
-
 def train(args,io):
 
     if args.enable_wandb == True:
@@ -285,14 +317,13 @@ def train(args,io):
     trainer = pl.Trainer.from_argparse_args(args,max_epochs=-1)
     trainer.fit(model, train_loader)
 
-
 def cli_main():
     # ------------
     # args
     # ------------
     parser = argparse.ArgumentParser(description='Point Cloud Recognition')
     parser.add_argument('--exp_name', type=str, default='exp', metavar='N',help='Name of the experiment')
-    parser.add_argument('--model_point', type=str, default='dgcnn', metavar='N',choices=['dgcnn', 'dgcnn_seg'],help='Model to use, [pointnet, dgcnn]')
+    parser.add_argument('--model_point', type=str, default='dgcnn', metavar='N',choices=['dgcnn' ,'pointbert', 'dgcnn_seg'],help='Model to use, [pointnet, dgcnn, PointBert]')
     parser.add_argument('--model_img', type=str, default='resnet', metavar='N',choices=['resnet', 'vision_transformer'],help='Model to use for images feature extraction, [ResNet, Vision Transformer]')
     parser.add_argument('--batch_size', type=int, default=16, metavar='batch_size',help='Size of batch)')
     parser.add_argument('--test_batch_size', type=int, default=16, metavar='batch_size',help='Size of batch)')
@@ -328,6 +359,10 @@ def cli_main():
         torch.cuda.manual_seed(args.seed)
     else:
         io.cprint('Using CPU')
+
+    
+    sys.path.append('models/pointbert/Point-BERT/models')
+    import Point_BERT
    
 
     # ------------
